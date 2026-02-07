@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneha, will you be my Valentine?</title>
+
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      text-align: center;
+      background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #7b1c2d;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 35px;
+      font-size: 20px;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: all 0.3s ease;
+    }
+
+    #yes-button {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    #yes-button:hover {
+      transform: scale(1.1);
+    }
+
+    #no-button {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+
+    #message {
+      margin-top: 25px;
+      font-size: 1.3rem;
+      color: #4a0c1f;
+      display: none;
+    }
+  </style>
+
+  <script>
+    function moveNoButton() {
+      const noBtn = document.getElementById("no-button");
+      const x = Math.random() * (window.innerWidth - 150);
+      const y = Math.random() * (window.innerHeight - 150);
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    }
+
+    function sayYes() {
+      document.body.innerHTML = `
+        <h1>YAY 💖</h1>
+        <p style="font-size:1.5rem;">
+          Sneha, you just made Rahul the happiest soul alive.<br>
+          This Valentine’s Day is ours now 🌹
+        </p>
+      `;
+    }
+  </script>
+</head>
+
+<body>
+  <h1>Sneha, will you be my Valentine?</h1>
+
+  <button id="yes-button" onclick="sayYes()">Yes 💕</button>
+  <button id="no-button" onmouseover="moveNoButton()">No 😌</button>
+
+  <div id="message"></div>
+</body>
+</html>
